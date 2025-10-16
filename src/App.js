@@ -6,8 +6,9 @@ import './App.css'; // Tüm CSS burada
 function App() {
   return (
     <div className="App">
+      {/* Üstte QR Kod Alanı */}
       <SwissQrMenu />
-      
+
       {/* Alt bar */}
       <div className="bottom-bar">
         <div className="contact-info">

@@ -21,7 +21,6 @@ const servicesData = [
   { id: 16, name: 'Damat Traşı & Özel Stil', price: 3000 },
 ];
 
-
 export default function SwissQrMenu() {
   const [search, setSearch] = useState('');
 
@@ -32,19 +31,10 @@ export default function SwissQrMenu() {
     <div className="menu-container">
       {/* Üst Bar */}
       <div className="top-bar">
-        SWISS KUAFOR GÜNCEL FİYAT LİSTESİ
+        SWISS KUAFÖR GÜNCEL FİYAT LİSTESİ
       </div>
 
-      {/* QR Kod */}
-      <div className="qr-container">
-        <QRCode value="https://swiss-kuafor.com/menu" size={120} />
-        <p>Menüyü QR ile açmak için tarayın</p>
-      </div>
-
-      {/* Başlık */}
-      <h1 className="menu-title">Swiss Kuaför Hizmetleri</h1>
-
-      {/* Arama */}
+      {/* Arama Kutusu */}
       <input
         type="text"
         placeholder="Hizmet ara..."
@@ -53,7 +43,7 @@ export default function SwissQrMenu() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* Tüm Hizmetler */}
+      {/* Hizmet Listesi */}
       <div className="menu-list-vertical">
         {filterItems(servicesData).map((s) => (
           <div key={s.id} className="menu-card-vertical">
@@ -63,17 +53,19 @@ export default function SwissQrMenu() {
         ))}
       </div>
 
-      {/* Alt Bar */}
+      {/* Alt Bilgi Alanı */}
       <div className="bottom-bar">
         <div className="contact-info">
           📞 <a href="tel:+902642777171">0264 277 71 71</a>
           <br />
           🏠 Cumhuriyet, Dr.Nuri Bayar Cd No:46 D:C, 54100 Adapazarı/Sakarya
         </div>
-        <div className="social-links">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
 
-        </div>
+      {/* QR Kodu en alta taşıdık */}
+      <div className="qr-container">
+        <QRCode value="https://swiss-qr-menu-54f9.vercel.app" size={120} />
+        <p>Menüyü QR ile açmak için tarayın</p>
       </div>
     </div>
   );
