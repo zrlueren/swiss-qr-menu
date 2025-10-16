@@ -340,3 +340,43 @@ body {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
+/* --- HİZMET KARTLARI --- */
+.menu-card-vertical {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Kart içi öğeler arası boşluk */
+  background: linear-gradient(120deg, #d6d6d6, #ececec);
+  padding: 14px 18px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-wrap: nowrap; /* Satır kırılmasını önler */
+}
+
+.menu-card-vertical:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(120deg, #bfbfbf, #dadada);
+}
+
+/* Hizmet adı */
+.menu-card-vertical .menu-name {
+  font-weight: 700;
+  color: #111;
+  flex: 1; /* Uzun isimlerde fiyatın yanına taşmasını engeller */
+  min-width: 0; /* Text overflow için önemli */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Fiyat */
+.menu-card-vertical .menu-price {
+  font-size: 22px;
+  color: #302f2f;
+  white-space: nowrap; /* TL birimi alt satıra geçmez */
+}
