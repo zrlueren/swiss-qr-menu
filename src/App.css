@@ -380,3 +380,56 @@ body {
   color: #302f2f;
   white-space: nowrap; /* TL birimi alt satıra geçmez */
 }
+/* --- HİZMET KARTLARI --- */
+.menu-card-vertical {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(120deg, #d6d6d6, #ececec);
+  padding: 14px 18px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  flex-wrap: wrap; /* Mobile uyum için wrap açıldı */
+}
+
+.menu-card-vertical:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  background: linear-gradient(120deg, #bfbfbf, #dadada);
+}
+
+/* Hizmet adı */
+.menu-card-vertical .menu-name {
+  font-weight: 700;
+  color: #111;
+  flex: 1 1 auto; /* Esnek büyüme ve küçülme */
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Mobile’da alt satıra geçmesini sağlar */
+}
+
+/* Fiyat */
+.menu-card-vertical .menu-price {
+  font-size: 22px;
+  color: #302f2f;
+  white-space: nowrap; /* TL birimi alt satıra geçmez */
+  flex-shrink: 0; /* Küçülmeyi engeller */
+}
+
+/* Responsive düzeltme */
+@media (max-width: 480px) {
+  .menu-card-vertical {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .menu-card-vertical .menu-price {
+    align-self: flex-end; /* Fiyat sağda kalır */
+  }
+}
